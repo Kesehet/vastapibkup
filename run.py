@@ -229,8 +229,8 @@ def whisper_run(url, task_type="Translate", params={}):
     response = { 'summary':'' , 'chunks':'', "duration":audio_length_minutes }
     # Ideal string is Translate&Transcribe&Summarize&Speaker Diarazation
     # response should be { 'summary':'' , 'chunks':''  }
-    if params["language"] == None or params["language"] == "":
-        params["language"] = "English"
+    # if params["language"] == None or params["language"] == "":
+    #    params["language"] = "English"
     if(task_type == "Translate"):
         res = whisper_pipe(filename,return_timestamps=True,generate_kwargs=params)
         response["summary"] = res['text']
