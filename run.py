@@ -243,13 +243,15 @@ def whisper_run(url, task_type="Translate", params={},context=""):
 
 
 
+    
     elif(task_type == "Paraphrase"):
         params["task"] = "transcribe"
-        res = whisper_pipe(filename,return_timestamps=True,generate_kwargs=params)
+        res = whisper_pipe(filename,return_timestamps=True,generate_kwargs=para>
         ctx = context if context != "" else "Summarize this ... "
+        print("\n\n\n\n\n\n\n\n\n\n\n\n"+ctx+"\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
         response["summary"] = ollama_ask( ctx + res['text'] )
         response["chunks"] = res["chunks"]
-
+      
 
 
     elif(task_type == "Speaker Diarization"):
