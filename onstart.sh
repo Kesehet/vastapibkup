@@ -10,7 +10,7 @@ pip install --upgrade git+https://github.com/huggingface/transformers.git accele
 pip install flash-attn --no-build-isolation
 
 ollama serve &
-ollama run openchat &
+ollama run llama3 &
 
 
 
