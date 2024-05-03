@@ -198,7 +198,7 @@ whisper_pipe = pipeline(
 
 
 
-def whisper_run(url, task_type="Translate", params={}):
+def whisper_run(url, task_type="Translate", params={},context=""):
   try:
     print("Trying to download...")
     # Assume download_file(url) downloads a file and returns its filename
@@ -229,8 +229,6 @@ def whisper_run(url, task_type="Translate", params={}):
     response = { 'summary':'' , 'chunks':'', "duration":audio_length_minutes }
     # Ideal string is Translate&Transcribe&Summarize&Speaker Diarazation
     # response should be { 'summary':'' , 'chunks':''  }
-    # if params["language"] == None or params["language"] == "":
-    #    params["language"] = "English"
     if(task_type == "Translate"):
         res = whisper_pipe(filename,return_timestamps=True,generate_kwargs=params)
         response["summary"] = res['text']
@@ -245,10 +243,11 @@ def whisper_run(url, task_type="Translate", params={}):
 
 
 
-    elif(task_type == "Summarize"):
+    elif(task_type == "Paraphrase"):
         params["task"] = "transcribe"
         res = whisper_pipe(filename,return_timestamps=True,generate_kwargs=params)
-        response["summary"] = ollama_ask("Summarize this ... " + res['text'] )
+        ctx = context if context != "" else "Summarize this ... "
+        response["summary"] = ollama_ask( ctx + res['text'] )
         response["chunks"] = res["chunks"]
 
 
@@ -293,6 +292,9 @@ def whisper_run(url, task_type="Translate", params={}):
     print("We ran into error.")
     print(e)
     return e
+
+
+
 
 
 
