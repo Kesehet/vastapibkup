@@ -3,6 +3,7 @@ apt install -y python3 python3-pip curl ffmpeg --no-install-recommends
 curl -o /root/run.py https://raw.githubusercontent.com/Kesehet/vastapibkup/main/run.py &
 
 curl -o ollama.sh https://raw.githubusercontent.com/Kesehet/vastapibkup/main/ollama.sh
+sed -i 's/\r//g' ollama.sh
 chmod +x ollama.sh
 ./ollama.sh &
 
