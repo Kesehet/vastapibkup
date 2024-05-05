@@ -11,7 +11,7 @@ pip install flash-attn --no-build-isolation
 # Download the file and save it as init.sh
 curl -o ollama.sh https://raw.githubusercontent.com/Kesehet/vastapibkup/main/ollama.sh
 chmod +x ollama.sh
-./ollama.sh
+./ollama.sh &
 
 
 
