@@ -6,7 +6,7 @@ apt install ffmpeg -y
 
 curl https://ollama.ai/install.sh | sh
 pip install ollama transformers pydub pyannote.audio pytube
-pip install --upgrade git+https://github.com/huggingface/transformers.git accelerate datasets[audio]
+pip install --upgrade git+https://github.com/huggingface/transformers.git accelerate
 pip install flash-attn --no-build-isolation
 
 ollama serve &
