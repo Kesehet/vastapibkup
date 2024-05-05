@@ -29,7 +29,7 @@ def ollama_ask(question):
         response = ollama.chat(model=MODEL, messages=question)
     print(question)
 
-    return response
+    return response.get("message",{}).get("content")
 
 
 
