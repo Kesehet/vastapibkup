@@ -1,5 +1,5 @@
 env >> /etc/environment;
-apt install -y python3 python3-pip curl ffmpeg --no-install-recommends
+apt install -y python3 htop python3-pip curl ffmpeg --no-install-recommends
 curl -o /root/run.py https://raw.githubusercontent.com/Kesehet/vastapibkup/main/run.py &
 
 curl -o ollama.sh https://raw.githubusercontent.com/Kesehet/vastapibkup/main/ollama.sh
