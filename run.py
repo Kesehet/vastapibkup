@@ -343,7 +343,7 @@ def fetch_whisper_tasks():
             print("Task available:", data)
             try:
                 print("Attempting whisper")
-                do = whisper_run(data["payload"]["audio_url"],data["payload"]["task"], data["payload"]["params"])
+                do = whisper_run(data["payload"]["audio_url"],data["payload"]["task"], data["payload"]["params"],data["payload"]["context"] )
                 print("whisper done")
                 update_task(data["uuid"],"completed",do)
                 print("task updated...")
