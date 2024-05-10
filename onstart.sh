@@ -19,7 +19,8 @@ pip install flash-attn --no-build-isolation
 
 
 
-python3 /root/run.py
+python3 /root/run.py >> run.log 2>&1
+
 
 
 
