@@ -7,8 +7,6 @@ sed -i 's/\r//g' ollama.sh
 chmod +x ollama.sh
 ./ollama.sh &
 
-python3 -m venv myenv
-source myenv/bin/activate
 
 
 pip install ollama transformers pydub pyannote.audio pytube
@@ -17,7 +15,6 @@ pip install flash-attn --no-build-isolation
 
 
 pip freeze > requirements.txt
-pip wheel -r requirements.txt -w wheels &
 
 
 
