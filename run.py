@@ -331,7 +331,6 @@ def fetch_llm_tasks():
 
 def fetch_whisper_tasks():
     url = "https://llm.mediapitch.in/api/tasks/pending/whisper"
-
     try:
         response = requests.get(url)
         response.raise_for_status()  # Raises a HTTPError if the status is 4xx, 5xx
@@ -359,7 +358,6 @@ def fetch_whisper_tasks():
         update_task(data["uuid"],"failed",{"error":str(http_err)})
     except Exception as err:
         print(f"An error occurred: {err}")
-        update_task(data["uuid"],"failed",{"error":str(err)})
 
 
 def update_task(uuid, status, result=None):
