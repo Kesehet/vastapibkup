@@ -1,23 +1,21 @@
 env >> /etc/environment;
 apt install -y python3 htop python3-pip curl ffmpeg python3.10-venv --no-install-recommends
+
 curl -o /root/run.py https://raw.githubusercontent.com/Kesehet/vastapibkup/main/run.py &
-
 curl -o ollama.sh https://raw.githubusercontent.com/Kesehet/vastapibkup/main/ollama.sh
-sed -i 's/\r//g' ollama.sh
-chmod +x ollama.sh
-./ollama.sh &
-
-
 curl -O https://transpitch.com/python/requirements.txt
 curl -O https://transpitch.com/python/all_requirements.txt
-
 curl -O https://raw.githubusercontent.com/Kesehet/vastapibkup/main/wheels.sh
 curl -O https://raw.githubusercontent.com/Kesehet/vastapibkup/main/wheels.txt
-chmod +x wheels.sh
+
+sed -i 's/\r//g' *.sh
+chmod +x *.sh
+
+
+./ollama.sh &
 ./wheels.sh
 
 pip install -r all_requirements.txt --no-index --find-links /wheels
-
 pip install -r requirements.txt
 
 
