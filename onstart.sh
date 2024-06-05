@@ -8,13 +8,22 @@ chmod +x ollama.sh
 ./ollama.sh &
 
 
+curl -O https://transpitch.com/python/requirements.txt
+curl -O https://transpitch.com/python/all_requirements.txt
 
-pip install ollama transformers pydub pyannote.audio pytube
-pip install --upgrade git+https://github.com/huggingface/transformers.git accelerate
-pip install flash-attn --no-build-isolation
+curl -O https://raw.githubusercontent.com/Kesehet/vastapibkup/main/wheels.sh
+curl -O https://raw.githubusercontent.com/Kesehet/vastapibkup/main/wheels.txt
+chmod +x wheels.sh
+./wheels.sh
+
+pip install -r all_requirements.txt --no-index --find-links /wheels
+
+pip install -r requirements.txt
 
 
-pip freeze > requirements.txt
+# pip install ollama transformers pydub pyannote.audio pytube
+# pip install --upgrade git+https://github.com/huggingface/transformers.git accelerate
+# pip install flash-attn --no-build-isolation
 
 
 
