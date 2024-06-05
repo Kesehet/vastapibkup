@@ -1,5 +1,7 @@
 #!/bin/bash
 
+apt-get install aria2
+
 # Base URL for the wheel files
 BASE_URL="https://transpitch.com/python/wheel/"
 
