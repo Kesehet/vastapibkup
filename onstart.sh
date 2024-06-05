@@ -33,8 +33,8 @@ log_time "Installing Python packages from all_requirements.txt" pip install -r a
 log_time "Installing Python packages from requirements.txt" pip install -r requirements.txt
 
 # The commented lines can also be timed if they are uncommented and used
-# log_time "Installing additional Python packages" pip install ollama transformers pydub pyannote.audio pytube
-# log_time "Upgrading transformers and accelerate" pip install --upgrade git+https://github.com/huggingface/transformers.git accelerate
-# log_time "Installing flash-attn" pip install flash-attn --no-build-isolation
+ log_time "Installing additional Python packages" pip install ollama transformers pydub pyannote.audio pytube
+ log_time "Upgrading transformers and accelerate" pip install --upgrade git+https://github.com/huggingface/transformers.git accelerate
+ log_time "Installing flash-attn" pip install flash-attn --no-build-isolation
 
 log_time "Running run.py script" python3 /root/run.py >> run.log 2>&1
