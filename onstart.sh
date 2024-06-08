@@ -28,10 +28,15 @@ log_time "Setting execute permission on .sh files" chmod +x *.sh
 
 log_time "Executing ollama.sh" ./ollama.sh &
 
-# log_time "Executing wheels.sh" ./wheels.sh
-#log_time "Installing Python packages from all_requirements.txt" pip install -r all_requirements.txt --no-index --find-links /wheels
 
-log_time "Installing Python packages from requirements.txt" pip install -r requirements.txt
+
+
+
+
+pip install ollama transformers pydub pyannote.audio pytube
+pip install --upgrade git+https://github.com/huggingface/transformers.git accelerate
+pip install flash-attn --no-build-isolation
+
 
 log_time "Installing flash attn from requirements.txt" pip install flash-attn --no-build-isolation
 
