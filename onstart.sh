@@ -33,9 +33,8 @@ log_time "Executing ollama.sh" ./ollama.sh &
 
 
 
-pip install ollama transformers pydub pyannote.audio pytube
-pip install --upgrade git+https://github.com/huggingface/transformers.git accelerate
-pip install flash-attn --no-build-isolation
+log_time "Executing Simple python packages " pip install ollama transformers pydub pyannote.audio pytube
+log_time "Executing dedicated transformers installation form huggingface " pip install --upgrade git+https://github.com/huggingface/transformers.git accelerate
 
 
 log_time "Installing flash attn from requirements.txt" pip install flash-attn --no-build-isolation
