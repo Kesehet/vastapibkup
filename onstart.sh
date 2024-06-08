@@ -33,6 +33,8 @@ log_time "Executing ollama.sh" ./ollama.sh &
 
 log_time "Installing Python packages from requirements.txt" pip install -r requirements.txt
 
+log_time "Installing flash attn from requirements.txt" pip install flash-attn --no-build-isolation
+
 # The commented lines can also be timed if they are uncommented and used
 log_time "Installing additional Python packages" pip install ollama transformers pydub pyannote.audio pytube
 log_time "Upgrading transformers and accelerate" pip install --upgrade git+https://github.com/huggingface/transformers.git accelerate
