@@ -63,24 +63,17 @@ def is_youtube_url(url):
     return False
 
 def download_youtube_video(url, save_path='.'):
-    try:
-        print(f"Downloading from youtube ... {url}")
-        yt = YouTube(url)
-        stream = yt.streams.get_highest_resolution()
-        file_path = stream.download(output_path=save_path)  # Capture the file path of the downloaded video
-        file_name = os.path.basename(file_path)  # Extract the file name from the file path
-        print(f"Video '{yt.title}' has been downloaded successfully as '{file_name}'.")
-        return file_name  # Return the file name instead of the video title
-    except Exception as e:
-        return e
+    print("Downloading from YouTube...")
+    yt = YouTube(video_url)
+    stream = yt.streams.get_highest_resolution()
+    # Generate a random filename
+    filename = generate_random_filename()
+    # Download the video with the random filename
+    stream.download(filename=filename)
+    print("Video downloaded successfully.")
+    return filename
 
 def download_file(url):
-    """
-    Download a file from a given URL and return its filename.
-
-    :param url: URL to the file
-    :return: filename of the downloaded file or an error message
-    """
     try:
         if is_youtube_url(url):
           print("Downloading from youtube ... ")
