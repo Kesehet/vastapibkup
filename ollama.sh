@@ -4,4 +4,4 @@ ollama serve &
 
 sleep 20
 
-ollama run llama3
+ollama run llama3.1
