@@ -62,7 +62,7 @@ def is_youtube_url(url):
         return True
     return False
 
-def download_youtube_video(url, save_path='.'):
+def download_youtube_video(video_url,save_path="."):
     print("Downloading from YouTube...")
     yt = YouTube(video_url)
     stream = yt.streams.get_highest_resolution()
