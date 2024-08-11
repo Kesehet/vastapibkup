@@ -15,7 +15,7 @@ import sys
 import traceback
 from pydub import AudioSegment
 from pyannote.audio import Pipeline
-from pytube import YouTube
+from pytubefix import YouTube
 import requests
 
 
