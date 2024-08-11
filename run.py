@@ -72,7 +72,7 @@ def download_youtube_video(url, save_path='.'):
         print(f"Video '{yt.title}' has been downloaded successfully as '{file_name}'.")
         return file_name  # Return the file name instead of the video title
     except Exception as e:
-        print("Downloading failed")
+        print(e)
         return "Error"
 
 def download_file(url):
