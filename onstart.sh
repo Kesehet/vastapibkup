@@ -33,7 +33,7 @@ log_time "Executing ollama.sh" ./ollama.sh &
 
 
 
-log_time "Executing Simple python packages " pip install ollama transformers pydub pyannote.audio pytube
+log_time "Executing Simple python packages " pip install ollama transformers pydub pyannote.audio pytube pytubefix
 log_time "Executing dedicated transformers installation form huggingface " pip install --upgrade git+https://github.com/huggingface/transformers.git accelerate
 
 
