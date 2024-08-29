@@ -1,5 +1,5 @@
 
-MODEL = "llama3"
+MODEL = "llama3.1"
 import ollama
 import time
 import torch
@@ -157,7 +157,7 @@ device = "cuda:0" if torch.cuda.is_available() else "cpu"
 #Creating the pyannote pipeline
 pyannote_pipeline = Pipeline.from_pretrained(
     "pyannote/speaker-diarization-3.1",
-    use_auth_token="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")
+    use_auth_token="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")
 pyannote_pipeline.to(torch.device(device))
 # ______________________________________________
 
